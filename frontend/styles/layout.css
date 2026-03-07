@@ -1,0 +1,131 @@
+.live-indicator{
+font-size:12px;
+font-weight:600;
+margin-left:10px;
+}
+
+.live-indicator.online{
+color:#2ecc71;
+}
+
+.live-indicator.offline{
+color:#e74c3c;
+}
+
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: var(--nav);
+}
+
+.nav-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-family: 'Courier New';
+}
+
+.logo {
+  width: 44px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg,#ff9933,#2f71db,#2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .brand-text {
+  background: linear-gradient(90deg,#ff9933,#ffffff,#09ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+html.dark .nav-link {
+  color: #fff;
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  width: 50px;
+  height: 26px;
+  border-radius: 999px;
+  background: #d6d6d6;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  transition: 0.3s;
+}
+
+html.dark .toggle-thumb {
+  transform: translateX(24px);
+  background: var(--accent);
+}
+
+
+/* =========== FOOTER ==========*/
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+  background: #f0f0f0;
+  color: #0b3c5d;
+}
+
+html.dark footer {
+  background: #000;
+  color: #fff;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Civic Shield – Welfare</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components/notifications.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+    <link rel="stylesheet" href="../styles/components/health.css">
+
+    <link rel="stylesheet" href="../styles/pages/welfare.css">
+
+    <link rel="stylesheet" href="../styles/offline.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <script>
+        (function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- ===== NAVBAR (SAME AS DASHBOARD) ===== -->
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+            <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+        </div>
+
+        <div class="nav-right">
+            <a href="../pages/dashboard.html" class="nav-link">Dashboard</a>
+            <a href="../pages/welfare.html" class="nav-link active">Welfare</a>
+            <a href="../pages/voting.html" class="nav-link">Voting</a>
+            <a href="../pages/analytics.html" class="nav-link">Analytics</a>
+
+            <div class="notification-wrapper">
+                <span id="notifyBell" class="notify-bell">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+                <div id="notifyPanel" class="notify-panel">
+                    <h4>Notifications</h4>
+                    <ul id="notifyList"></ul>
+                </div>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="toggle-thumb"></span>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="page-content">
+        <section class="welfare-card fade-in">
+            <h2>Welfare Distribution System</h2>
+
+            <input type="text" id="ration" placeholder="Enter Ration Card Number">
+
+            <button onclick="issueWelfare()">Verify & Issue Welfare</button>
+
+            <p class="status" id="status">Verification pending...</p>
+
+        </section>
+    </main>
+
+    <!-- ===== WELFARE STOCK TABLE ===== -->
+    <div class="table-center">
+        <div id="welfareTableWrapper" class="welfare-table hidden fade-in">
+            <h3>Remaining Welfare Quantity</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Allocated</th>
+                        <th>Remaining</th>
+                        <th>Unit</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="welfareTableBody">
+                    <!-- Filled dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="health-panel fade-in">
+        <h3>🛡 Fraud Monitoring</h3>
+
+        <div class="health-grid">
+            <div class="health-item">
+                <span class="dot green"></span>
+                Claim Pattern
+                <strong>Normal</strong>
+            </div>
+
+            <div class="health-item">
+                <span class="dot yellow"></span>
+                Location Mismatch
+                <strong>Review</strong>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ===== FOOTER (SAME AS DASHBOARD) ===== -->
+    <footer>
+        © <span id="year"></span> Government of India | Civic Shield Platform<br>
+        <small>Equity • Welfare • Empowerment</small>
+    </footer>
+
+    <script type="module" src="../scripts/core/offline.js"></script>
+    <script type="module" src="../scripts/pages/welfare.js"></script>
+    <script type="module" src="../scripts/welfare/issueWelfare.js"></script>
+    <script type="module" src="../scripts/core/theme.js"></script>
+    <script>
+        checkPageAccess();
+    </script>
+
+    <script>
+        addAuditLog("PAGE_ACCESS", "Page viewed");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* ================= VOTING PAGE ================= */
+
+/* ---------- Layout ---------- */
+.page-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+/* ---------- Voting Card ---------- */
+.welfare-box {
+  width: 380px;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.welfare-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(255,153,51,.35);
+}
+
+.welfare-box h2 {
+  margin-bottom: 22px;
+}
+
+.welfare-box input,
+.welfare-box select {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 15px;
+}
+
+.welfare-box button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.welfare-box button:hover {
+  opacity: 0.9;
+}
+
+.status {
+  margin-top: 16px;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+/* ---------- Mobile ---------- */

@@ -1,0 +1,47 @@
+CIVIC-SHIELD/
+│
+├── backend/
+│   ├── config/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/
+│   ├── public/
+│   │   ├── images/        ← ALL images here
+│   │   └── icons/
+│   │
+│   ├── pages/
+│   │   ├── dashboard.html
+│   │   ├── welfare.html
+│   │   ├── voting.html
+│   │   └── auth.html
+│   │
+│   ├── styles/
+│   │   ├── base.css
+│   │   ├── layout.css
+│   │   ├── components/
+│   │   │   ├── navbar.css
+│   │   │   ├── cards.css
+│   │   │   └── forms.css
+│   │   └── pages/
+│   │       ├── dashboard.css
+│   │       ├── welfare.css
+│   │       └── voting.css
+│   │
+│   ├── scripts/
+│   │   ├── core/
+│   │   │   ├── api.js
+│   │   │   └── network.js
+│   │   ├── components/
+│   │   │   └── toast.js
+│   │   └── pages/
+│   │       ├── dashboard.js
+│   │       ├── welfare.js
+│   │       └── voting.js
+│   │
+│   └── index.html (optional)
+│
+└── README.md

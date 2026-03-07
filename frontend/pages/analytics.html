@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+
+    <link rel="stylesheet" href="../styles/components/notifications.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+
+    <link rel="stylesheet" href="../styles/pages/analytics.css">
+
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+            <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+        </div>
+
+        <div class="nav-right">
+            <a href="../pages/dashboard.html" class="nav-link">Dashboard</a>
+            <a href="../pages/welfare.html" class="nav-link">Welfare</a>
+            <a href="../pages/voting.html" class="nav-link">Voting</a>
+            <a href="../pages/analytics.html" class="nav-link active">Analytics</a>
+
+            <div class="notification-wrapper">
+                <span id="notifyBell" class="notify-bell">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+                <div id="notifyPanel" class="notify-panel">
+                    <h4>Notifications</h4>
+                    <ul id="notifyList"></ul>
+                </div>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="toggle-thumb"></span>
+            </button>
+        </div>
+    </nav>
+
+    <h2 class="page-title" id="chartTitle">Analytics</h2>
+
+
+    <!-- ===== CHARTS ===== -->
+    <div class="charts-row">
+        <div class="chart-box fade-in" id="chart-welfare">
+            <h4>Welfare Distribution (Weekly)</h4>
+            <canvas id="welfareChart"></canvas>
+        </div>
+
+        <div class="chart-box fade-in" id="chart-votes">
+            <h4>Voting Participation</h4>
+            <canvas id="voteChart"></canvas>
+        </div>
+
+        <div class="chart-box fade-in" id="chart-votes-hourly">
+            <h4>Votes Cast (Hourly)</h4>
+            <canvas id="votesChart"></canvas>
+        </div>
+
+        <div class="chart-box fade-in" id="chart-fraud">
+            <h4>Fraud Alerts Breakdown</h4>
+            <canvas id="fraudChart"></canvas>
+        </div>
+
+    </div>
+
+    <!-- ✅ SAME FOOTER -->
+    <footer>
+        © <span id="year"></span> Government of India | Civic Shield Platform<br>
+        <small>Integrity • Transparency • Democracy</small>
+    </footer>
+
+    <script type="module" src="../scripts/core/offline.js"></script>
+    <script type="module" src="../scripts/pages/analytics.js"></script>
+    <script type="module" src="../scripts/core/theme.js"></script>
+
+</body>
+
+</html>

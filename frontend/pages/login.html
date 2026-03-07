@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Civic Shield Portal</title>
+    <link rel="stylesheet" href="../styles/pages/login.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/pages/signup.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="active">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- LOGIN AREA -->
+
+    <div class="container">
+
+        <div class="login-card">
+
+            <h2>Secure Portal Login</h2>
+
+
+            <!-- ROLE TABS -->
+
+            <div class="tabs">
+
+                <button class="tab active" onclick="showLogin('citizen',this)">Citizen</button>
+                <button class="tab" onclick="showLogin('officer',this)">Officer</button>
+                <button class="tab" onclick="showLogin('admin',this)">Admin</button>
+
+            </div>
+
+
+            <!-- CITIZEN LOGIN -->
+
+            <form id="citizen" class="login-form active">
+
+                <input type="email" placeholder="Citizen Email" required>
+
+                <input type="password" placeholder="Password" required>
+
+                <button type="submit">Citizen Login</button>
+
+                <p class="register">
+                    New Citizen? <a href="#">Register here</a>
+                </p>
+
+            </form>
+
+
+            <!-- OFFICER LOGIN -->
+
+            <form id="officer" class="login-form">
+
+                <input type="text" placeholder="Officer ID" required>
+
+                <input type="password" placeholder="Officer Password" required>
+
+                <button type="submit">Officer Login</button>
+
+            </form>
+
+
+            <!-- ADMIN LOGIN -->
+
+            <form id="admin" class="login-form">
+
+                <input type="text" placeholder="Admin Username" required>
+
+                <input type="password" placeholder="Admin Password" required>
+
+                <button type="submit">Admin Login</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="..//scripts/Script.js"></script>
+
+</body>
+
+</html>

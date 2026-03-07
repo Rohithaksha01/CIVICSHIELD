@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Schemes | Civic Shield</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+
+    <link rel="stylesheet" href="../styles/components/notifications.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+    <link rel="stylesheet" href="../styles/components/health.css">
+
+    <link rel="stylesheet" href="../styles/pages/schemes.css">
+
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+            <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+        </div>
+
+        <div class="nav-right">
+            <a href="../pages/dashboard.html" class="nav-link">Dashboard</a>
+            <a href="../pages/welfare.html" class="nav-link">Welfare</a>
+            <a href="../pages/voting.html" class="nav-link">Voting</a>
+            <a href="../pages/analytics.html" class="nav-link">Analytics</a>
+
+            <div class="notification-wrapper">
+                <span id="notifyBell" class="notify-bell">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+                <div id="notifyPanel" class="notify-panel">
+                    <h4>Notifications</h4>
+                    <ul id="notifyList"></ul>
+                </div>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="toggle-thumb"></span>
+            </button>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="container">
+
+        <!-- PAGE HEADER -->
+        <section class="schemes-header">
+            <h1>Government Welfare Schemes</h1>
+            <p>
+                Browse and apply for Central and State Government schemes through
+                official and secure government portals.
+            </p>
+        </section>
+
+        <!-- ================= SCHEMES GRID ================= -->
+        <section class="schemes-grid">
+
+            <!-- 1 -->
+            <!-- 1 PM-KISAN -->
+            <a href="https://pmkisan.gov.in" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/pm kisan.jpg" alt="PM Kisan">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag farmer">Farmer</span>
+                    <h3>PM-KISAN</h3>
+                    <p>₹6,000 annual income support for eligible farmers</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 2 Ayushman Bharat -->
+            <a href="https://pmjay.gov.in" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/ayushman bharath.png" alt="Ayushman Bharat">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag health">Health</span>
+                    <h3>Ayushman Bharat</h3>
+                    <p>Health insurance coverage up to ₹5 Lakhs per family</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 3 Ujjwala -->
+            <a href="https://www.pmuy.gov.in" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/ujjwala yojana.jpg" alt="Ujjwala Yojana">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag women">Women</span>
+                    <h3>Ujjwala Yojana</h3>
+                    <p>Free LPG connection for women from BPL households</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 4 MGNREGA -->
+            <a href="https://www.nrega.nic.in" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/MGNEGA.webp" alt="MGNREGA">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag job">Employment</span>
+                    <h3>MGNREGA</h3>
+                    <p>100 days guaranteed wage employment</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 5 PM Awas -->
+            <a href="https://www.india.gov.in/spotlight/pradhan-mantri-awas-yojana-urban" target="_blank"
+                class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/AWAS YOJANA.jpg" alt="PM Awas Yojana">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag all">Housing</span>
+                    <h3>PM Awas Yojana</h3>
+                    <p>Affordable housing for citizens</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 6 Beti Bachao -->
+            <a href="https://www.india.gov.in/spotlight/beti-bachao-beti-padhao-campaign" target="_blank"
+                class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/beti bachao.jpg" alt="Beti Bachao">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag women">Women</span>
+                    <h3>Beti Bachao Beti Padhao</h3>
+                    <p>Education & empowerment of the girl child</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 7 Stand Up India -->
+            <a href="https://www.india.gov.in/spotlight/stand-india-scheme" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/stand up india.jpg" alt="Stand Up India">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag job">Startup</span>
+                    <h3>Stand Up India</h3>
+                    <p>Loans for entrepreneurs</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 8 Skill India -->
+            <a href="https://www.india.gov.in/spotlight/pradhan-mantri-kaushal-vikas-yojana" target="_blank"
+                class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/skill india.jpg" alt="Skill India">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag job">Skill</span>
+                    <h3>Skill India</h3>
+                    <p>Skill development for youth</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 9 Digital India -->
+            <a href="https://www.india.gov.in/spotlight/digital-india-programme" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/digital inda.jpg" alt="Digital India">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag all">Digital</span>
+                    <h3>Digital India</h3>
+                    <p>Digital empowerment of citizens</p>
+                    <span class="scheme-action">Apply on Official Website →</span>
+                </div>
+            </a>
+
+            <!-- 10 MyScheme -->
+            <a href="https://www.myscheme.gov.in" target="_blank" class="scheme-card">
+                <div class="scheme-image">
+                    <img src="../public/images/my scheme.jpg" alt="MyScheme Portal">
+                </div>
+                <div class="scheme-body">
+                    <span class="scheme-tag all">All Schemes</span>
+                    <h3>MyScheme Portal</h3>
+                    <p>Discover all Central & State Government schemes</p>
+                    <span class="scheme-action">Explore Schemes →</span>
+                </div>
+            </a>
+
+        </section>
+
+    </main>
+    
+    <footer>
+        © <span id="year"></span> Government of India | Civic Shield Platform<br>
+        <small>Integrity • Transparency • Democracy</small>
+
+        <script type="module" src="../scripts/core/offline.js"></script>
+        <script type="module" src="../scripts/core/theme.js"></script>
+</body>
+
+
+</html>
