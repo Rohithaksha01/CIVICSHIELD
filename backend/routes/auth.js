@@ -58,4 +58,38 @@ router.post("/admin-login", async (req, res) => {
   }
 });
 
+
+/* =========================
+   OFFICER LOGIN
+========================= */
+
+const Officer = require("../models/Officer");
+
+router.post("/officer-login", async (req, res) => {
+
+    const { officerId, password } = req.body;
+
+    const officer = await Officer.findOne({ officerId });
+
+    if(!officer){
+        return res.json({
+            success:false,
+            message:"Officer not found"
+        });
+    }
+
+    if(officer.password !== password){
+        return res.json({
+            success:false,
+            message:"Wrong password"
+        });
+    }
+
+    res.json({
+        success:true,
+        message:"Officer Login Successful"
+    });
+
+});
+
 module.exports = router;

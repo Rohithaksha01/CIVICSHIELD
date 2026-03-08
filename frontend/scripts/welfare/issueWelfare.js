@@ -1,4 +1,7 @@
 export async function issueWelfare() {
+
+  console.log("BUTTON CLICKED");
+
   const rationInput = document.getElementById("ration");
   const status = document.getElementById("status");
   const tableWrapper = document.getElementById("welfareTableWrapper");
@@ -23,8 +26,10 @@ export async function issueWelfare() {
   status.textContent = "Verifying ration card...";
   status.style.color = "orange";
 
+  console.log("RATION:", ration);
+
   try {
-    const res = await fetch("http://localhost:5000/issue-welfare", {
+    const res = await fetch("http://localhost:3000/issue-welfare", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ration })

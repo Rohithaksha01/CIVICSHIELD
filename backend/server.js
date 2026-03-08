@@ -87,14 +87,21 @@ app.post("/issue-welfare", async (req, res) => {
     console.log("SAVED DOC:", doc);
 
     res.json({
-      message: "Welfare issued successfully"
-    });
+  message: "Welfare issued successfully",
+  stock: [
+    { item: "Rice", total: 1000, remaining: 850, unit: "kg" },
+    { item: "Wheat", total: 800, remaining: 640, unit: "kg" },
+    { item: "Sugar", total: 500, remaining: 420, unit: "kg" },
+    { item: "Oil", total: 300, remaining: 250, unit: "litres" }
+  ]
+});
 
   } catch (err) {
     console.error("ERROR FULL:", err);
     res.status(500).json({
       message: "Server error"
     });
+    rationInput.value = "";
   }
 });
 
@@ -122,6 +129,6 @@ app.get("/dashboard-stats", async (req, res) => {
 
 
 // ✅ LISTEN MUST BE LAST
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
 });
