@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Civic Shield Admin</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components/notifications.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+    <link rel="stylesheet" href="../styles/components/health.css">
+    <link rel="stylesheet" href="../styles/pages/admin.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        if (!localStorage.getItem("adminLoggedIn")) {
+            window.location.href = "../pages/login.html";
+            localStorage.setItem("adminLoggedIn", "true");
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+            <span id="liveIndicator" class="live-indicator offline">● ONLINE</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+
+        <div class="nav-right" id="navMenu">
+            <a href="#" class="nav-link active">Dashboard</a>
+            <a href="officer.html" class="nav-link">Officer</a>
+
+            <a href="login.html" class="logout-btn">Logout</a>
+            <a href="#" onclick="openProfile()" class="logout-btn">Profile</a>
+
+            <div class="notification-wrapper">
+                <span id="notifyBell" class="notify-bell">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle">
+                <span class="toggle-thumb"></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <h2 class="title">Admin Governance Panel</h2>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="card">
+            <h4>Total Citizens</h4>
+            <h2>1250</h2>
+        </div>
+
+        <div class="card">
+            <h4>Staff Members</h4>
+            <h2>42</h2>
+        </div>
+
+        <div class="card">
+            <h4>Welfare Distributed</h4>
+            <h2>480</h2>
+        </div>
+
+        <div class="card">
+            <h4>Votes Recorded</h4>
+            <h2>890</h2>
+        </div>
+
+    </div>
+
+
+    <!-- CHARTS -->
+
+    <div class="charts">
+
+        <div class="chart-box">
+            <h3>Citizen Registration</h3>
+            <canvas id="citizenChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Welfare Distribution</h3>
+            <canvas id="welfareChart"></canvas>
+        </div>
+
+    </div>
+
+
+    <!-- STAFF TABLE -->
+
+    <div class="table-box">
+
+        <h3>Staff Management</h3>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>OF101</td>
+                <td>Rahul Sharma</td>
+                <td>Voting</td>
+                <td class="active">Active</td>
+            </tr>
+
+            <tr>
+                <td>OF102</td>
+                <td>Priya Nair</td>
+                <td>Welfare</td>
+                <td class="active">Active</td>
+            </tr>
+
+            <tr>
+                <td>OF103</td>
+                <td>Amit Singh</td>
+                <td>Verification</td>
+                <td class="inactive">Inactive</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- PROFILE MODAL -->
+
+    <div id="profileModal" class="modal">
+
+        <div class="profile-card">
+
+            <span class="close" onclick="closeProfile()">✖</span>
+
+            <div class="profile-body">
+
+                <div class="profile-left">
+
+                    <img id="profileImage" src="https://i.pravatar.cc/150?img=12">
+
+                    <input type="file" id="uploadImage" hidden onchange="uploadPhoto()">
+
+                    <button class="upload-btn" onclick="document.getElementById('uploadImage').click()">
+                        Upload Photo
+                    </button>
+
+                </div>
+
+
+                <div class="profile-right">
+
+                    <h2 id="adminName">Admin Name</h2>
+
+                    <p><b>Email:</b> admin@gmail.com</p>
+
+                    <p><b>Phone:</b> <span id="adminPhone">9876543210</span></p>
+
+                    <p><b>Voter ID:</b> ABC123456</p>
+
+                    <p><b>Aadhaar:</b> XXXX XXXX 1234</p>
+
+                    <button class="edit-btn" onclick="editAdmin()">Edit Profile</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../scripts/pages/admin.js"></script>
+    <script src="../scripts/core/layout.js"></script>
+    <script type="module" src="../scripts/core/offline.js"></script>
+    <script type="module" src="../scripts/dashboard/navigation.js"></script>
+    <script type="module" src="../scripts/dashboard/slider.js"></script>
+    <script type="module" src="../scripts/dashboard/systemHealth.js"></script>
+    <script type="module" src="../scripts/core/theme.js"></script>
+    <script type="module" src="../scripts/core/themeLoader.js"></script>
+
+</body>
+
+</html>

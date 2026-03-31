@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Shield - Citizen Register</title>
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/pages/register.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+
+        <div class="nav-right" id="navMenu">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <div class="container">
+
+        <div class="register-card">
+
+            <h2>Citizen Registration</h2>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <input type="text" id="name" required>
+                    <label>Full Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label>Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="phone" required>
+                    <label>Phone Number</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="aadhaar" required>
+                    <label>Aadhaar Number</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label>Create Password</label>
+                    <div class="strength" id="strength"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" required>
+                    <label>Confirm Password</label>
+                </div>
+
+                <button class="btn" type="submit">Register Citizen</button>
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="../pages/login.html">Login here</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+    
+    <script src="../scripts/core/layout.js"></script>
+    <script src="../scripts/pages/register.js"></script>
+
+</body>
+
+</html>

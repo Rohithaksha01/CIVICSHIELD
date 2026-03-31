@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Civic Shield Central Dashboard</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+
+    <link rel="stylesheet" href="../styles/components/notifications.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+    <link rel="stylesheet" href="../styles/components/health.css">
+
+    <link rel="stylesheet" href="../styles/pages/central.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../public/images/logo.png" class="logo">
+            <span class="brand-text">CIVIC<br>SHIELD</span>
+            <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+
+        <div class="nav-right" id="navMenu">
+            <div class="notification-wrapper">
+                <span id="notifyBell" class="notify-bell">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+                <div id="notifyPanel" class="notify-panel">
+                    <h4>Notifications</h4>
+                    <ul id="notifyList"></ul>
+                </div>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="toggle-thumb"></span>
+            </button>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <a href="#system"><i class="fa fa-server"></i> System Health</a>
+        <a href="#fraud"><i class="fa fa-shield"></i> Fraud Monitoring</a>
+        <a href="#schemes"><i class="fa fa-hand-holding-heart"></i> Welfare Schemes</a>
+        <a href="#states"><i class="fa fa-chart-column"></i> State Analytics</a>
+        <a href="#admins"><i class="fa fa-user"></i> Admin Management</a>
+        <a href="#reports"><i class="fa fa-file"></i> Reports</a>
+
+    </div>
+
+    <br>
+
+
+    <section class="main">
+
+        <h1>Central Government Control Panel</h1>
+
+        <div class="stats">
+
+            <div class="statCard">
+                <i class="fa fa-users"></i>
+                <h3 class="counter" data-target="125000">0</h3>
+                <p>Total Citizens</p>
+            </div>
+
+            <div class="statCard">
+                <i class="fa fa-shield"></i>
+                <h3 class="counter" data-target="540">0</h3>
+                <p>Fraud Cases</p>
+            </div>
+
+            <div class="statCard">
+                <i class="fa fa-hand-holding-heart"></i>
+                <h3 class="counter" data-target="85000">0</h3>
+                <p>Welfare Distributed</p>
+            </div>
+
+            <div class="statCard">
+                <i class="fa fa-vote-yea"></i>
+                <h3 class="counter" data-target="92000">0</h3>
+                <p>Voting Participation</p>
+            </div>
+
+            <div class="statCard">
+                <i class="fa fa-user-tie"></i>
+                <h3 class="counter" data-target="45">0</h3>
+                <p>Total Admins</p>
+            </div>
+
+        </div>
+        <!-- SYSTEM HEALTH -->
+
+        <div class="card" id="system">
+
+            <h2>System Health</h2>
+
+            <div class="statusGrid">
+
+                <div class="status">Database <span class="ok">Connected</span></div>
+                <div class="status">Server <span class="ok">Running</span></div>
+                <div class="status">API Health <span class="ok">Healthy</span></div>
+                <div class="status">System Uptime <span>99.98%</span></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FRAUD MONITORING -->
+
+        <div class="card" id="fraud">
+
+            <h2>Fraud Complaints</h2>
+
+            <table>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Region</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>FR102</td>
+                    <td>Karnataka</td>
+                    <td class="pending">Pending</td>
+                    <td><button class="resolveBtn">Resolve</button></td>
+                </tr>
+
+                <tr>
+                    <td>FR221</td>
+                    <td>Delhi</td>
+                    <td class="invest">Investigating</td>
+                    <td><button class="resolveBtn">Resolve</button></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- SCHEME MANAGEMENT -->
+
+        <div class="card" id="schemes">
+
+            <h2>Government Schemes</h2>
+
+            <button class="addBtn" onclick="addScheme()">Add Scheme</button>
+
+            <table id="schemeTable">
+
+                <tr>
+                    <th>Scheme</th>
+                    <th>Status</th>
+                    <th>Beneficiaries</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>Farmer Support</td>
+                    <td class="active">Active</td>
+                    <td>45000</td>
+                    <td><button class="toggleSchemeBtn">Deactivate</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- STATE ANALYTICS -->
+
+        <div class="card" id="states">
+
+            <h2>State Analytics</h2>
+
+            <div
+             class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- ADMIN MANAGEMENT -->
+
+        <div class="card" id="admins">
+
+            <h2>Admin Management</h2>
+
+            <button class="addBtn" onclick="addAdmin()">Add Admin</button>
+
+            <table id="adminTable">
+
+                <tr>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Status</th>
+                    <th>Last Login</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>Rajesh</td>
+                    <td>Karnataka</td>
+                    <td class="active">Active</td>
+                    <td>Today</td>
+                    <td><button class="suspendBtn">Suspend</button></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- REPORTS -->
+
+        <div class="card" id="reports">
+
+            <h2>Reports</h2>
+
+            <ul class="reportList">
+
+                <li>Welfare Distribution Report</li>
+                <li>Fraud Report</li>
+                <li>Voting Statistics</li>
+                <li>Citizen Registration Report</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+    <script src="../scripts/core/layout.js"></script>
+    <script type="module" src="../scripts/central/centralmain.js"></script>
+    <script type="module" src="../scripts/app.js"></script>
+    <script type="module" src="../scripts/core/offline.js"></script>
+    <script type="module" src="../scripts/pages/central.js"></script>
+    <script type="module" src="../scripts/core/theme.js"></script>
+
+</body>
+
+</html>

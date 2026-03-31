@@ -16,22 +16,9 @@
 
     <link rel="stylesheet" href="../styles/pages/dashboard.css">
 
-    <link rel="stylesheet" href="../styles/animations.css">
     <link rel="stylesheet" href="../styles/responsive.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        (function () {
-            if (localStorage.getItem("theme") === "dark") {
-                document.documentElement.classList.add("dark");
-            }
-        })();
-
-        // Mocking missing functions so the script doesn't break
-        function checkPageAccess() { console.log("Access checked."); }
-        function addAuditLog(type, msg) { console.log(`[AUDIT] ${type}: ${msg}`); }
-        function retryConnection() { window.location.reload(); }
-    </script>
 </head>
 
 <body>
@@ -41,9 +28,12 @@
             <img src="../public/images/logo.png" class="logo">
             <span class="brand-text">CIVIC<br>SHIELD</span>
             <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right" id="navMenu">
             <a href="../pages/dashboard.html" class="nav-link active">Dashboard</a>
             <a href="../pages/welfare.html" class="nav-link">Welfare</a>
             <a href="../pages/voting.html" class="nav-link">Voting</a>
@@ -61,6 +51,7 @@
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
                 <span class="toggle-thumb"></span>
             </button>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
         </div>
     </nav>
 
@@ -170,17 +161,13 @@
 
     <div id="toastContainer" class="toast-container"></div>
 
+    <script src="../scripts/core/layout.js"></script>
+    <script type="module" src="../scripts/core/theme.js"></script>
     <script type="module" src="../scripts/core/offline.js"></script>
     <script type="module" src="../scripts/pages/dashboard.js"></script>
-    <script type="module" src="../scripts/dashboard/navigation.js"></script>
     <script type="module" src="../scripts/dashboard/slider.js"></script>
+    <script type="module" src="../scripts/dashboard/navigation.js"></script>
     <script type="module" src="../scripts/dashboard/systemHealth.js"></script>
-    <script type="module" src="../scripts/core/theme.js"></script>
-
-    <script>
-        checkPageAccess();
-        addAuditLog("PAGE_ACCESS", "Page viewed");
-    </script>
 </body>
 
 </html>

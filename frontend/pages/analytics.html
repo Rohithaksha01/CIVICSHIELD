@@ -32,9 +32,12 @@
             <img src="../public/images/logo.png" class="logo">
             <span class="brand-text">CIVIC<br>SHIELD</span>
             <span id="liveIndicator" class="live-indicator offline">● OFFLINE</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right" id="navMenu">
             <a href="../pages/dashboard.html" class="nav-link">Dashboard</a>
             <a href="../pages/welfare.html" class="nav-link">Welfare</a>
             <a href="../pages/voting.html" class="nav-link">Voting</a>
@@ -87,7 +90,7 @@
         © <span id="year"></span> Government of India | Civic Shield Platform<br>
         <small>Integrity • Transparency • Democracy</small>
     </footer>
-
+    <script src="../scripts/core/layout.js"></script>
     <script type="module" src="../scripts/core/offline.js"></script>
     <script type="module" src="../scripts/pages/analytics.js"></script>
     <script type="module" src="../scripts/core/theme.js"></script>

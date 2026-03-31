@@ -1,4 +1,5 @@
-function initThemeToggle() {
+
+export function initThemeToggle() {
   const toggle = document.getElementById("themeToggle");
 
   if (!toggle) return;
@@ -13,4 +14,9 @@ function initThemeToggle() {
   });
 }
 
-initThemeToggle();
+// Apply saved theme on load
+export function applySavedTheme() {
+  if (localStorage.theme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+}

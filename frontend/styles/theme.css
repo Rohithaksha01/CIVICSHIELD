@@ -1,12 +1,16 @@
-html.dark{
-  --bg:#0b0b0b;
-  --card:rgba(255,255,255,.07);
-  --text:#eaeaea;
-  --nav:#000;
+html.dark {
+  --bg: #0b0b0b;
+  --card: rgba(255, 255, 255, .07);
+  --text: #eaeaea;
+  --nav: #000;
+  --accent: #ff9933;
 }
-html.light{
-  --bg:#f4f6f9;
-  --card:#ffffff;
-  --text:#1e1e1e;
-  --nav:#ffffff;
+
+html.light {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --nav: #ffffff;
+  --accent: #ff9933;
+
 }

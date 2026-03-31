@@ -20,7 +20,7 @@ export function initStats() {
   const votes = document.getElementById("votes");
   const frauds = document.getElementById("frauds");
 
-  fetch("http://localhost:5000/dashboard-stats")
+  fetch("http://localhost:3000/dashboard-stats")
     .then(r => r.json())
     .then(d => {
       animate(citizens, d.citizens);

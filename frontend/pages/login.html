@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Civic Shield Portal</title>
+    <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/pages/login.css">
+    <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/theme.css">
-    <link rel="stylesheet" href="../styles/pages/signup.css">
-    <link rel="stylesheet" href="../styles/animations.css">
     <link rel="stylesheet" href="../styles/responsive.css">
 </head>
 
@@ -18,11 +19,14 @@
         <div class="nav-left">
             <img src="../public/images/logo.png" class="logo">
             <span class="brand-text">CIVIC<br>SHIELD</span>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
-        <div class="nav-right">
-            <a href="#" class="active">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+        <div class="nav-right" id="navMenu">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
         </div>
     </nav>
 
@@ -50,14 +54,20 @@
 
             <form id="citizen" class="login-form active">
 
-                <input type="email" placeholder="Citizen Email" required>
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Citizen Email</label>
+                </div>
 
-                <input type="password" placeholder="Password" required>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
 
-                <button type="submit">Citizen Login</button>
+                <button class="btn" type="submit">Citizen Login</button>
 
                 <p class="register">
-                    New Citizen? <a href="#">Register here</a>
+                    New Citizen? <a href="../pages/register.html">Register here</a>
                 </p>
 
             </form>
@@ -67,11 +77,17 @@
 
             <form id="officer" class="login-form">
 
-                <input type="text" id="officerId" placeholder="Officer ID" required>
+                <div class="input-group">
+                    <input type="text" id="officerId" required>
+                    <label>Officer ID</label>
+                </div>
 
-                <input type="password" id="officerPassword" placeholder="Officer Password" required>
+                <div class="input-group">
+                    <input type="password" id="officerPassword" required>
+                    <label>Officer Password</label>
+                </div>
 
-                <button type="submit">Officer Login</button>
+                <button class="btn" type="submit">Officer Login</button>
 
             </form>
 
@@ -80,11 +96,17 @@
 
             <form id="admin" class="login-form">
 
-                <input type="text" placeholder="Admin Username" required>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Admin Username</label>
+                </div>
 
-                <input type="password" placeholder="Admin Password" required>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Admin Password</label>
+                </div>
 
-                <button type="submit">Admin Login</button>
+                <button class="btn" type="submit">Admin Login</button>
 
             </form>
 
@@ -92,7 +114,7 @@
 
     </div>
 
-
+    <script src="../scripts/core/layout.js"></script>
     <script src="../scripts/pages/login.js"></script>
     <script type="module" src="../scripts/login/script.js"></script>
 

@@ -1,0 +1,176 @@
+/* ================= HEADER ================= */
+
+.page-header {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--text);
+}
+
+/* ================= PANELS ================= */
+
+.panel-box {
+    background: var(--card);
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .6);
+    border-left: 4px solid #ff9933;
+
+    /* optional premium look */
+    backdrop-filter: blur(10px);
+}
+
+.panel-box h3 {
+    margin-bottom: 20px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ================= VERIFY CARD ================= */
+
+.verify-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-group button {
+    margin-left: 10px;
+}
+
+.approve-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: var(--text);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.approve-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(46, 204, 113, .5);
+}
+
+.reject-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: var(--text);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reject-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(231, 76, 60, .5);
+}
+
+/* ================= TABLE ================= */
+
+.panel-box table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.panel-box th {
+    background: #111;
+    color: #ff9933;
+    font-size: 13px;
+    padding: 12px;
+    text-align: center;
+}
+
+.panel-box td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.panel-box tr {
+    transition: 0.2s;
+}
+
+.panel-box tr:hover {
+    background: rgba(255, 153, 51, 0.08);
+}
+
+/* STATUS COLORS */
+
+.pending {
+    color: #ffcc00;
+}
+
+.active-status {
+    color: #2ecc71;
+}
+
+/* ================= FRAUD ALERTS ================= */
+
+.fraud-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fraud-list li {
+    margin: 10px 0;
+    padding: 12px;
+    background: var(--bg);
+    border-left: 4px solid #e74c3c;
+    border-radius: 6px;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    margin: 10px 0;
+    padding: 12px;
+    background: var(--bg);
+    border-left: 4px solid #3498db;
+    border-radius: 6px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #bbb;
+}

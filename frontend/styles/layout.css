@@ -1,18 +1,22 @@
+/* ===== LIVE STATUS ===== */
+
 .live-indicator{
-font-size:12px;
-font-weight:600;
-margin-left:10px;
+  font-size:12px;
+  font-weight:600;
+  margin-left:10px;
 }
 
 .live-indicator.online{
-color:#2ecc71;
+  color:#2ecc71;
 }
 
 .live-indicator.offline{
-color:#e74c3c;
+  color:#e74c3c;
 }
 
-/* NAV */
+
+/* ===== NAVBAR ===== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,6 +24,8 @@ color:#e74c3c;
   padding: 14px 40px;
   background: var(--nav);
 }
+
+/* LEFT */
 
 .nav-left {
   display: flex;
@@ -50,14 +56,19 @@ html.dark .brand-text {
   -webkit-text-fill-color: transparent;
 }
 
+
+/* RIGHT */
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 26px;
 }
 
+/* LINKS */
+
 .nav-link {
-  color: #000;
+  color: var(--text);
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -68,6 +79,10 @@ html.dark .nav-link {
 }
 
 .nav-link.active {
+  color: var(--accent);
+}
+
+html.dark .nav-link.active{
   color: var(--accent);
 }
 
@@ -87,7 +102,30 @@ html.dark .nav-link {
   width: 100%;
 }
 
+
+/* ===== BUTTONS ===== */
+
+.logout-btn{
+  background: transparent;
+  border: 2px solid #ff9933;
+  color: #ff9933;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover{
+  background:#ff9933;
+  color:#000;
+  transform: translateY(-2px);
+  box-shadow:0 6px 15px rgba(255,153,51,0.4);
+}
+
+
 /* ===== THEME TOGGLE ===== */
+
 .theme-toggle {
   width: 50px;
   height: 26px;
@@ -115,7 +153,24 @@ html.dark .toggle-thumb {
 }
 
 
-/* =========== FOOTER ==========*/
+/* ===== HAMBURGER ===== */
+
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:inherit;
+  cursor:pointer;
+  margin-left:auto;
+}
+
+
+
+
+
+/* ===== FOOTER ===== */
+
 footer {
   width: 100%;
   text-align: center;
